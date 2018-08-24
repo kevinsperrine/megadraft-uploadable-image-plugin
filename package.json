@@ -1,7 +1,7 @@
 {
-  "name": "image",
+  "name": "megadraft-uploadable-image-plugin",
   "version": "0.0.1",
-  "description": "Megadraft Upload Plugin",
+  "description": "Megadraft Uploadable Image Plugin",
   "main": "lib/plugin.js",
   "dependencies": {
     "classnames": "^2.2.6",
