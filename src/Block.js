@@ -87,7 +87,7 @@ export default class Block extends Component {
   }
 
   render() {
-    const { onUpload, ...commonProps } = this.props;
+    const { ...commonProps } = this.props;
     const { uploadError } = this.state;
 
     return (

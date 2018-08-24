@@ -9,8 +9,8 @@ module.exports = {
   output: {
     path: __dirname + "/dist",
     publicPath: "/dist/",
-    filename: "image.js",
-    library: "image",
+    filename: "megadraft-uploadable-image-plugin.js",
+    library: "megadraft-uploadable-image-plugin",
     libraryTarget: "umd"
   },
   externals: {
