@@ -9,11 +9,47 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { MegadraftEditor } from 'megadraft';
 
-import plugin from 'image';
+import plugin from 'megadraft-uploadable-image-plugin';
 
 class Example extends React.Component {
+  /**
+   * The success responses are expected to contain a `src` property, and the errors are generic JS `new Error('an error message')`
+   *
+   * An example uploading to imgur
+   */
+  handleUpload(fileList) {
+    const [file] = fileList;
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'https://api.imgur.com/3/image');
+      xhr.setRequestHeader(
+        'Authorization',
+        `Client-ID ${process.env.REACT_APP_IMGUR_CLIENT_ID}`
+      );
+      const data = new FormData();
+      data.append('image', file);
+      xhr.send(data);
+      xhr.addEventListener('load', () => {
+        const response = JSON.parse(xhr.responseText);
+        if (response.success) {
+          resolve({ src: response.data.link });
+        } else {
+          reject(new Error(response.data.error));
+        }
+      });
+      xhr.addEventListener('error', () => {
+        const error = JSON.parse(xhr.responseText);
+        reject(error);
+      });
+    });
+  }
+
   render() {
-    return <MegadraftEditor plugins={[plugin]} />;
+    return (
+      <MegadraftEditor
+        plugins={[plugin({ handleUpload: this.handleUpload })]}
+      />
+    );
   }
 }
 
