@@ -13,7 +13,8 @@ import plugin from 'megadraft-uploadable-image-plugin';
 
 class Example extends React.Component {
   /**
-   * The success responses are expected to contain a `src` property, and the errors are generic JS `new Error('an error message')`
+   * The success responses are expected to contain a `src` property
+   * and the errors are generic JS errors. `new Error('an error message')`
    *
    * An example uploading to imgur
    */
@@ -36,10 +37,6 @@ class Example extends React.Component {
         } else {
           reject(new Error(response.data.error));
         }
-      });
-      xhr.addEventListener('error', () => {
-        const error = JSON.parse(xhr.responseText);
-        reject(error);
       });
     });
   }
