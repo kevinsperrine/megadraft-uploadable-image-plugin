@@ -1,0 +1,43 @@
+/*
+ * Copyright (c) 2018, Kevin S. Perrine <kperrine@gmail.com>
+ *
+ * License: MIT
+ */
+/*
+ * Copyright (c) 2018, Kevin S. Perrine <kperrine@gmail.com>
+ *
+ * License: MIT
+ */
+/*
+ * YOUR STYLES HERE
+ */
+.muipImage {
+  display: block;
+  margin: 0 auto; }
+
+.muipImage--small {
+  width: 25%; }
+
+.muipImage--medium {
+  width: 50%; }
+
+.muipImage--big {
+  width: 100%; }
+
+body {
+  margin: 0; }
+
+.content {
+  font-family: Open Sans, Sans-serif; }
+  .content header {
+    background: #212121;
+    color: #fff;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    line-height: 70px; }
+    .content header h1 {
+      margin: 0;
+      font-size: 1.5em; }
+  .content .editor {
+    margin: 0 auto;
+    max-width: 960px; }

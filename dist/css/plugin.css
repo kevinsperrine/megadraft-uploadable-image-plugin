@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2018, Kevin S. Perrine <kperrine@gmail.com>
+ *
+ * License: MIT
+ */
+/*
+ * YOUR STYLES HERE
+ */
+.muipImage {
+  display: block;
+  margin: 0 auto;
+}
+
+.muipImage--small {
+  width: 25%;
+}
+
+.muipImage--medium {
+  width: 50%;
+}
+
+.muipImage--big {
+  width: 100%;
+}
