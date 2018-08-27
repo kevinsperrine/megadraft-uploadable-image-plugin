@@ -29,7 +29,9 @@ export default {
         display: "medium",
         rightsHolder: "",
         src: "",
-        type: constants.PLUGIN_TYPE
+        target: "_self",
+        type: constants.PLUGIN_TYPE,
+        url: ""
       },
       entityRanges: []
     },

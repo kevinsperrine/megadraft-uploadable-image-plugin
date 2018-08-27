@@ -7,7 +7,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { MegadraftEditor } from "megadraft";
-import { editorStateFromRaw } from "megadraft/lib/utils";
+import { editorStateFromRaw, editorStateToJSON } from "megadraft/lib/utils";
 
 import plugin from "../src/plugin";
 
@@ -21,6 +21,7 @@ class Demo extends React.Component {
     };
     this.onChange = ::this.onChange;
     this.handleUpload = ::this.handleUpload;
+    this.handleDumpState = ::this.handleDumpState;
   }
 
   onChange(content) {
@@ -54,12 +55,17 @@ class Demo extends React.Component {
     });
   }
 
+  handleDumpState() {
+    console.log(editorStateToJSON(this.state.content));
+  }
+
   render() {
-    const pluginName = "Megadraft Uploadable Image Plugin";
+    const pluginName = "megadraft button plugin";
     return (
       <div className="content">
         <header>
           <h1>{pluginName} - Megadraft Plugin</h1>
+          <button onClick={this.handleDumpState}>Dump State</button>
         </header>
 
         <div className="editor">

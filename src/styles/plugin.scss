@@ -24,3 +24,20 @@
 .muipImage--big {
   width: 100%;
 }
+
+.muipLegend {
+  font-size: 0.875em;
+  padding: 0 12px;
+}
+
+.megadraft-editor .block__input.muipRadioInput {
+  width: auto;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.muipHelperText {
+  font-size: 0.75em;
+  color: #999;
+  display: block;
+}

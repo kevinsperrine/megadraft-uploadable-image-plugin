@@ -24,7 +24,9 @@ export default class Button extends Component {
       display: "medium",
       rightsHolder: "",
       src: "",
-      type: constants.PLUGIN_TYPE
+      target: "_self",
+      type: constants.PLUGIN_TYPE,
+      url: ""
     };
 
     // Calls the onChange method with the new state.
