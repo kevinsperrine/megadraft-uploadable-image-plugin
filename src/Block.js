@@ -102,8 +102,6 @@ export default class Block extends Component {
     const { ...commonProps } = this.props;
     const { uploadError } = this.state;
 
-    console.log(this.props);
-
     return (
       <CommonBlock {...commonProps} actions={this.actions}>
         <BlockContent>
