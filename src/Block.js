@@ -102,6 +102,8 @@ export default class Block extends Component {
     const { ...commonProps } = this.props;
     const { uploadError } = this.state;
 
+    console.log(this.props);
+
     return (
       <CommonBlock {...commonProps} actions={this.actions}>
         <BlockContent>
@@ -127,7 +129,7 @@ export default class Block extends Component {
                 <span className="block__input muipRadioInput">
                   <span style={{ marginRight: "12px" }}>Open Link:</span>
                   <input
-                    name="target"
+                    name={`${this.props.container.props.offsetKey}-target`}
                     type="radio"
                     value="_self"
                     checked={this.props.data.target === "_self"}
@@ -137,7 +139,7 @@ export default class Block extends Component {
                 </span>
                 <span className="block__input muipRadioInput">
                   <input
-                    name="target"
+                    name={`${this.props.container.props.offsetKey}-target`}
                     type="radio"
                     value="_blank"
                     checked={this.props.data.target === "_blank"}
