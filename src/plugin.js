@@ -32,7 +32,8 @@ export default ({ handleUpload }) => {
       alt: "",
       caption: "",
       rightsHolder: "",
-      src: ""
+      src: "",
+      zoomable: false
     }
   };
 };

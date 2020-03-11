@@ -26,7 +26,8 @@ export default class Button extends Component {
       src: "",
       target: "_self",
       type: constants.PLUGIN_TYPE,
-      url: ""
+      url: "",
+      zoomable: false
     };
 
     // Calls the onChange method with the new state.

@@ -34,6 +34,7 @@ export default class Block extends Component {
     this._handleCaptionChange = ::this._handleCaptionChange;
     this._handleRightsHolderChange = ::this._handleRightsHolderChange;
     this._loadImageWhenUserStopsTyping = ::this._loadImageWhenUserStopsTyping;
+    this._handleZoomableChange = ::this._handleZoomableChange;
 
     this._uploadInput = React.createRef();
 
@@ -96,6 +97,11 @@ export default class Block extends Component {
         this.props.container.updateData({ src: result.src });
       })
       .catch(error => this.setState({ uploadError: error.message }));
+  }
+
+  _handleZoomableChange(event) {
+    event.stopPropagation();
+    this.props.container.updateData({ zoomable: event.target.checked });
   }
 
   render() {
@@ -174,6 +180,20 @@ export default class Block extends Component {
               value={this.props.data.rightsHolder}
               onChange={this._handleRightsHolderChange}
             />
+            <span className="zoomableContainer">
+              <input
+                id={`${this.props.container.props.offsetKey}-zoomable`}
+                type="checkbox"
+                checked={this.props.data.zoomable}
+                onChange={this._handleZoomableChange}
+              />
+              <label
+                className="zoomableLabel"
+                for={`${this.props.container.props.offsetKey}-zoomable`}
+              >
+                Zoomable
+              </label>
+            </span>
             <BlockInputFile
               onChange={this._handleUploadImage}
               error={uploadError}
